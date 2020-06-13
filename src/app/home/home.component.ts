@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  proJect = 'อะไรก้อได้';
-  nameTh = 'TEST';
+  proJect = 'AsZALenge';
+  nameTh1 = 'Ch';
+  nameTh2 = 'Ch';
   constructor() { }
 
   ngOnInit() {
