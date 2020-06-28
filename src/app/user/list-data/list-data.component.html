@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <table class="table bg-light">
+            <thead>
+                <tr>
+                    <th scope="col">ชื่อจริง</th>
+                    <th scope="col">ชื่อเล่น</th>
+                    <th scope="col">เบอร์</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of dataList">
+                    <td>
+                        {{data.nameFull}}
+                    </td>
+                    <td>
+                        {{data.name}}
+                    </td>
+                    <td>
+                        {{data.mobile}}
+                    </td>
+                    <td>
+                        <!-- <button class="btn btn-lg btn-success btn-block">
+                            เพิ่ม
+                        </button> -->
+                        <button class="btn btn-lg btn-danger btn-block "(click)="deleteData(data)" > ลบ </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

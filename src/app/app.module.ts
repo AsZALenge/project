@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisUserComponent } from './regis-user/regis-user.component';
 import { RegisOwnerComponent } from './regis-owner/regis-owner.component';
+import { ListDataComponent } from './user/list-data/list-data.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RegisOwnerComponent } from './regis-owner/regis-owner.component';
     HomeComponent,
     RegisterComponent,
     RegisUserComponent,
-    RegisOwnerComponent
+    RegisOwnerComponent,
+    ListDataComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { RegisOwnerComponent } from './regis-owner/regis-owner.component';
       { path: 'register', component: RegisterComponent },
       { path: 'regisUser', component: RegisUserComponent },
       { path: 'regisOwner', component: RegisOwnerComponent },
+      { path: 'userList', component: ListDataComponent },
     ]),
   ],
   providers: [],
