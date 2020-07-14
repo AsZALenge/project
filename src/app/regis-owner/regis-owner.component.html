@@ -16,42 +16,54 @@
         <span class="bg-light">OR</span>
     </p> -->
 			<h4 class="card-title mt-3 text-center">Register Owner</h4>
-			<form>
+			<form [formGroup]="registerFormDorm" (ngSubmit)="submitFormDorm()">
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fa fa-user"></i> </span>
 					</div>
-					<input name="" class="form-control" placeholder="Dormitory name" type="text">
+					<input formControlName="dorm_owner" class="form-control" placeholder="Owner Name" type="text">
 				</div> <!-- form-group// -->
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 					</div>
-					<input class="form-control" placeholder="Create password" type="password">
-				</div> <!-- form-group// -->
-				<div class="form-group input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-					</div>
-					<input class="form-control" placeholder="Repeat password" type="password">
+					<input formControlName="dorm_password" class="form-control" placeholder="Password" type="text">
 				</div> <!-- form-group// -->
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fa fa-user"></i> </span>
 					</div>
-					<input name="" class="form-control" placeholder="ID Card Number" type="text">
+					<input formControlName="dorm_name" class="form-control" placeholder="Dormitory name" type="text">
 				</div> <!-- form-group// -->
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
-						<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+						<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
 					</div>
-					<input name="" class="form-control" placeholder="Address" type="email">
+					<input formControlName="dorm_citizen" class="form-control" placeholder="ID Card Number" type="text">
 				</div> <!-- form-group// -->
 				<div class="form-group input-group">
 					<div class="input-group-prepend">
 						<span class="input-group-text"> <i class="fa fa-phone"></i> </span>
 					</div>
-					<input name="" class="form-control" placeholder="Phone number" type="text">
+					<input formControlName="dorm_tel" class="form-control" placeholder="Phone" type="text">
+				</div> <!-- form-group// -->
+				<div class="form-group input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"> <i class="fa fa-home"></i> </span>
+					</div>
+					<input formControlName="dorm_address" class="form-control" placeholder="Address" type="text">
+				</div> <!-- form-group// -->
+				<div class="form-group input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"> <i class="fa fa-book"></i> </span>
+					</div>
+					<input formControlName="dorm_numbank" class="form-control" placeholder="Bank account number" type="text">
+				</div> <!-- form-group// -->
+				<div class="form-group input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"> <i class="fa fa-book"></i> </span>
+					</div>
+					<input formControlName="dorm_namebank" class="form-control" placeholder="Bank name" type="text">
 				</div> <!-- form-group// -->
 				<div class="form-group input-group">
 					<div class="input-group-prepend">

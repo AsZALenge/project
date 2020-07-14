@@ -1,86 +1,100 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-<div class="container">
-	<p>
-	<div class="card bg-light">
-		<article class="card-body mx-auto" style="max-width: 400px;">
-			<!-- <h4 class="card-title mt-3 text-center">Create Account</h4>
-	<p class="text-center">Get started with your free account</p>
-	<p>
-		<a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
-		<a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
-	</p>
-	<p class="divider-text">
-        <span class="bg-light">OR</span>
-    </p> -->
-			<h4 class="card-title mt-3 text-center">Register User</h4>
-			<form>
-				<div class="form-group input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"> <i class="fa fa-user"></i> </span>
-					</div>
-					<input name="" class="form-control" placeholder="Dormitory name" type="text">
-				</div> <!-- form-group// -->
-				<div class="form-group input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-					</div>
-					<input class="form-control" placeholder="Create password" type="password">
-				</div> <!-- form-group// -->
-				<div class="form-group input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-					</div>
-					<input class="form-control" placeholder="Repeat password" type="password">
-				</div> <!-- form-group// -->
-				<div class="form-group input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"> <i class="fa fa-user"></i> </span>
-					</div>
-					<input name="" class="form-control" placeholder="ID Card Number" type="text">
-				</div> <!-- form-group// -->
-				<div class="form-group input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-					</div>
-					<input name="" class="form-control" placeholder="Address" type="email">
-				</div> <!-- form-group// -->
-				<div class="form-group input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-					</div>
-					<input name="" class="form-control" placeholder="Phone number" type="text">
-				</div> <!-- form-group// -->
-				<div class="form-group input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text"> <i class="fa fa-window-restore"></i> </span>
-					</div>
-					<select class="form-control">
-						<option selected=""> Select Image</option>
-					</select>
-				</div> <!-- form-group end.// -->
+<div class="aUyidf">
+    <div class="container">
+        <div class="col-md-4 offset-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">สมัครสมาชิก</h5>
+                    <p class="card-text">
+                    </p>
+                    <form [formGroup]="registerFormUser" (ngSubmit)="submitForm()" accept-charset="UTF-8"
+                        autocomplete="off">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Username" formControlName="user_name"
+                                    type="text" required />
+                            </div>
+                            <div *ngIf="form.user_name.invalid && (form.user_name.dirty || form.user_name.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="form.user_name.errors.required">
+                                    Username is required.
+                                </div>
+                                <div *ngIf="form.user_name.errors.minlength">
+                                    Username must be at least 4 characters long.
+                                </div>
+                            </div>
 
-				<div class="form-group">
-					<button type="submit" class="btn btn-primary btn-block"> Create Account </button>
-				</div> <!-- form-group// -->
-				<p class="text-center">Have an account? <a href="login">Log In</a> </p>
-			</form>
-		</article>
-	</div> <!-- card.// -->
+
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Password" formControlName="user_password"
+                                    type="password" required />
+                            </div>
+                            <div *ngIf="form.user_password.invalid && (form.user_password.dirty || form.user_password.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="form.user_password.errors.required">
+                                    Password is required.
+                                </div>
+                                <div *ngIf="form.user_password.errors.minlength">
+                                    Password must be at least 4 characters long.
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control" placeholder="citizen" formControlName="user_citizen"
+                                    type="text" required />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="email" formControlName="user_email"
+                                    type="text" required />
+                            </div>
+                            <div *ngIf="form.user_citizen.invalid && (form.user_citizen.dirty || form.user_citizen.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="form.user_citizen.errors.required">
+                                    citizen is required.
+                                </div>
+                                <div *ngIf="form.user_citizen.errors.minlength">
+                                    citizen must be at least 4 characters long.
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Phone" formControlName="user_tel" type="text"
+                                    required />
+                            </div>
+                            <div *ngIf="form.user_tel.invalid && (form.user_tel.dirty || form.user_tel.touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="form.user_tel.errors.required">
+                                    Phone is required.
+                                </div>
+                                <div *ngIf="form.user_tel.errors.minlength">
+                                    Phone must be at least 4 characters long.
+                                </div>
+                            </div>
+
+                            <div class="form-check"checked>
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                    formControlName="user_gender" name="gender" value="M" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    ชาย
+                                </label>
+                                <br>
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                    formControlName="user_gender" name="gender" value="F" >
+                                <label class="form-check-label" for="exampleRadios1">
+                                    หญิง
+                                </label>
+                            </div>
+
+                            <button class="btn btn-lg btn-success btn-block">
+                                ตกลง
+                            </button>
+                            <button class="btn btn-lg btn-danger btn-block" (click)="resetForm()">
+                                ยกเลิก
+                            </button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
-<!--container end.//-->
-
-<br><br>
-<article class="bg-secondary mb-3">
-	<div class="card-body text-center">
-		<h3 class="text-white mt-3"></h3>
-		<p class="h5 text-white"><br>
-		</p> <br>
-		<!-- <p><a class="btn btn-warning" target="_blank" href="">
- <i class="fa fa-window-restore "></i></a></p> -->
-	</div>
-	<br><br>
-</article>

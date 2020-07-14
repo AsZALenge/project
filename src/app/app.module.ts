@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -9,6 +9,10 @@ import { RegisterComponent } from './register/register.component';
 import { RegisUserComponent } from './regis-user/regis-user.component';
 import { RegisOwnerComponent } from './regis-owner/regis-owner.component';
 import { ListDataComponent } from './user/list-data/list-data.component';
+import { MyServiceService } from './shared/service/my-service.service';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeAllComponent } from './home-all/home-all.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,21 +22,26 @@ import { ListDataComponent } from './user/list-data/list-data.component';
     RegisterComponent,
     RegisUserComponent,
     RegisOwnerComponent,
-    ListDataComponent
+    ListDataComponent,
+    HomeAllComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      { path: '', redirectTo: '/home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent },
-      { path: 'regisUser', component: RegisUserComponent },
-      { path: 'regisOwner', component: RegisOwnerComponent },
-      { path: 'userList', component: ListDataComponent },
-    ]),
+    // RouterModule.forRoot([
+    //   { path: '', redirectTo: '/home', pathMatch: 'full' },
+    //   { path: 'homeall', component: HomeAllComponent },
+    //   { path: 'home', component: HomeComponent },
+    //   { path: 'login', component: LoginComponent },
+    //   { path: 'register', component: RegisterComponent },
+    //   { path: 'regisUser', component: RegisUserComponent },
+    //   { path: 'regisOwner', component: RegisOwnerComponent },
+    //   { path: 'userList', component: ListDataComponent },
+    // ]),
+    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [MyServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
